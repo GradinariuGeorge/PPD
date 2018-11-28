@@ -1,5 +1,6 @@
 package Complex;
 
+@FunctionalInterface
 public interface Operation<T> {
-    T calculate(T firstMatrix, T secondMatrix);
+    T calculate( int startPoint, int endPoint);
 }

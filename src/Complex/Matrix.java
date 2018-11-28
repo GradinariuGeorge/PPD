@@ -6,27 +6,27 @@ import java.util.List;
 public class Matrix<T> {
 
     List<List<T>> cells;
-    int nrcols;
-    int nrrows;
+    int nrCols;
+    int nrRows;
     MatrixNumberGenerator matrixNumberGenerator;
 
-    public Matrix(int nrcols, int nrrows, MatrixNumberGenerator matrixNumberGenerator) {
-        this.nrcols = nrcols;
-        this.nrrows = nrrows;
+    public Matrix(int nrCols, int nrRows, MatrixNumberGenerator matrixNumberGenerator) {
+        this.nrCols = nrCols;
+        this.nrRows = nrRows;
         cells = new ArrayList<>();
         this.matrixNumberGenerator = matrixNumberGenerator;
 
-        for(int j=0;j<nrrows;j++){
+        for(int j = 0; j< nrRows; j++){
             cells.add(new ArrayList<>());
-            for(int k=0;k<nrcols;k++){
+            for(int k = 0; k< nrCols; k++){
                 cells.get(j).add(null);
             }
         }
     }
 
     public void init(){
-        for(int j=0;j<nrrows;j++){
-            for(int k=0;k<nrcols;k++){
+        for(int j = 0; j< nrRows; j++){
+            for(int k = 0; k< nrCols; k++){
                 cells.get(j).set(k,(T) matrixNumberGenerator.generateRandomNumber());
             }
         }
@@ -34,9 +34,10 @@ public class Matrix<T> {
 
     public void print() {
 
-        for (int i = 0; i < nrrows; i++) {
-            for (int j = 0; j < nrcols; j++) {
-                System.out.print(cells.get(i).get(j) + " ");
+        for (int i = 0; i < nrRows; i++) {
+            for (int j = 0; j < nrCols; j++) {
+//                System.out.print(cells.get(i).get(j) + " ");
+                System.out.print((T)(cells.get(i).get(j)).toString() + " ");
             }
             System.out.println("");
         }
@@ -50,19 +51,19 @@ public class Matrix<T> {
         return cells.get(row).get(column);
     }
 
-    public int getNrcols() {
-        return nrcols;
+    public int getNrCols() {
+        return nrCols;
     }
 
-    public void setNrcols(int nrcols) {
-        this.nrcols = nrcols;
+    public void setNrCols(int nrCols) {
+        this.nrCols = nrCols;
     }
 
-    public int getNrrows() {
-        return nrrows;
+    public int getNrRows() {
+        return nrRows;
     }
 
-    public void setNrrows(int nrrows) {
-        this.nrrows = nrrows;
+    public void setNrRows(int nrRows) {
+        this.nrRows = nrRows;
     }
 }

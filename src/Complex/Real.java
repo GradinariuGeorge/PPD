@@ -3,7 +3,7 @@ package Complex;
 public class Real {
     double number;
 
-    public Real(float number) {
+    public Real(double number) {
         this.number = number;
     }
 
@@ -16,5 +16,10 @@ public class Real {
 
     public void setNumber(double number) {
         this.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return  String.valueOf(number);
     }
 }

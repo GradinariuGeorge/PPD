@@ -29,4 +29,9 @@ public class Complex {
     public void setImaginary(double value) {
         this.imaginary = value;
     }
+
+    @Override
+    public String toString() {
+        return  real +" i" +imaginary ;
+    }
 }
